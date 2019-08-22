@@ -6,7 +6,7 @@ I/ Monitor (giám sát)
 a. Load monitoring in linux server  -top, W and uptime for check the load on server
 commands: #top
           #W
-		  #uptime
+	  #uptime
 b.kill process which is consuming high cpu 
    #kill -9 PID
 c. if php process are consuming more cpu , can use: 
