@@ -106,4 +106,4 @@ Mặc định không đc bật
 -Enable slow query logging by adding the following entry in MySQL configuration
      slow_query_log=/var/log/mariadb/slow.log
      
-
+-test git client
