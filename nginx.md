@@ -1,5 +1,5 @@
-             # Install nginx trên centos 
-**1. Tạo file nginx.repo
+             # Install nginx trên centos tag
+** 1. Tạo file nginx.repo
 * Vào đường dẫn: vim /etc/yum.repos.d/nginx.repo
 * Thêm:
     '''
