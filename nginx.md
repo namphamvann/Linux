@@ -26,7 +26,7 @@ systemctl enable nginx
 * Tạo virtualhost 
    - vim /etc/nginx/conf.d/virtualhost.conf
    - Cấu hình file virtualhost.conf:     
-   
+  ```
    server {
        listen       80;
        server_name  bongdaweb.com;
