@@ -1,61 +1,93 @@
-Tối ưu mysql: * monitoring
-              * check log
-	      * use some diagnostic tool (tool chẩn đoán)
+# Tối ưu mysql
+*monitoring
+*check log
+*use some diagnostic tool (tool chẩn đoán)
 I. Monitor (giám sát)
   1.top
-     a. Load monitoring in linux server  -top, W and uptime for check the load on server
-commands: #top
-          #W
-	  #uptime
-    b.kill process which is consuming high cpu 
-          #kill -9 PID
-    c. if php process are consuming more cpu , can use: 
-          #killall -9 php
+     a. Load monitoring in linux server top, W and uptime for check the load on server
+commands: 
+```
+top
+```
+```
+W
+```
+```
+uptime
+```
+	 
+    b.kill process which is consuming high cpu
+    ```
+          kill -9 PID
+	  ```
+    c. if php process are consuming more cpu , can use:
+    ```
+          killall -9 php
+	  ```
     d.restart apache
-        #killall -9 httpd
-        #/etc/init.d/httpd restart
+    ```
+    killall -9 httpd
+```
+	   ```
+        /etc/init.d/httpd restart
+	```
 2. Monitor bằng mytop
  b1: install mytop
  b2: dùng lệnh
-    # mytop --prompt -d database_name
-	
- * option:
-  ? : Display help.
-  c : Show “command counters” based on the Com_* values in SHOW STATUS.
-  d : Show only threads connected to a particular database.
-  f : Given a thread id, display the entire query that thread was running.
-  F : Disable all filtering (host, user, and db).
-  h : Only show queries from a particular host.
-  H : Toggle the header display. You can also specify either header=0 or header=1 in your config file to set the default behavior.
-  i : Toggle the display of idle (sleeping) threads. If sleeping threads are filtered, the default sorting order is reversed so that the longest running queries appear at the top of the list.
-  k : Kill a thread.
-  m : Toggle modes. Currently this switches from `top’ mode to `qps’ (Queries Per Second Mode). In this mode, mytop will write out one integer per second. The number written reflects the number of queries executed by the server in the previous one second interval.
+ ```
+    mytop --prompt -d database_name
+```	
+ *option:
+  *? : Display help.
+  *c : Show “command counters” based on the Com_* values in SHOW STATUS.
+  *d : Show only threads connected to a particular database.
+  *f : Given a thread id, display the entire query that thread was running.
+  *F : Disable all filtering (host, user, and db).
+  *h : Only show queries from a particular host.
+  *H : Toggle the header display. You can also specify either header=0 or header=1 in your config file to set the default behavior.
+  *i : Toggle the display of idle (sleeping) threads. If sleeping threads are filtered, the default sorting order is reversed so that the longest running queries appear at the top of the list.
+  *k : Kill a thread.
+  *m : Toggle modes. Currently this switches from `top’ mode to `qps’ (Queries Per Second Mode). In this mode, mytop will write out one integer per second. The number written reflects the number of queries executed by the server in the previous one second interval.
 
-More modes may be added in the future.
-  o : Reverse the default sort order.
-  p : Pause display.
-  q : Quit mytop
-  r : Reset the server’s status counters via a FLUSH STATUS command.
-  s : Change the sleep time (number of seconds between display refreshes).
-  u : Show only threads owned by a giver user
+ *More modes may be added in the future.
+  *o : Reverse the default sort order.
+  *p : Pause display.
+  *q : Quit mytop
+  *r : Reset the server’s status counters via a FLUSH STATUS command.
+  *s : Change the sleep time (number of seconds between display refreshes).
+  *u : Show only threads owned by a giver user
 3. Tăng số connection
- * Mặc định trong mysql số connection tối đa là 151 nonnection
- * Tăng connection: 
-     syntax: MariaDB [(none)]> set global max_connections = 1001;
+ *Mặc định trong mysql số connection tối đa là 151 nonnection
+ * Tăng connection:
+ ```
+      MariaDB [(none)]> set global max_connections = 1001;
+      ```
  * Tăng MaxRequestWorkers trong file cấu hình apache:
-    --> vào /etc/httpd/conf/httpd.conf add thêm:- MaxRequestWorkers 1000
-	                                        - ServerLimit 1000
+    */etc/httpd/conf/httpd.conf add thêm:
+        MaxRequestWorkers 1000
+        ServerLimit 1000
 4. Tweak cache
  a. Thread cache size
-* default off
-* Khi một client disconnect thread của client sẽ được đặt vào cache nếu như nó nhỏ hơn thread_cache_size.
-* Công thức: 8 + (max_connections / 100)
-* câu lệnh: MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
+*default off
+*Khi một client disconnect thread của client sẽ được đặt vào cache nếu như nó nhỏ hơn thread_cache_size.
+*Công thức: 8 + (max_connections / 100)
+*câu lệnh: MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
             MariaDB [(none)]> set global thread_cache_size = 4;
 	    MariaDB [(none)]> show variables like 'thread_%';
+	    Variable_name | Value
+	    ------------  | ------------
+	    thread_cache_size | 4
+	    thread_concurrency | 10
+	    thread_handling | one-thread-per-connection
+	    thread_pool_idle_timeout | 60
+	    thread_pool_max_threads | 500
+	    thread_pool_oversubscribe | 3
+	    thread_pool_size | 2
+	    thread_pool_stall_limit | 500
+	    thread_stack | 294912
 +---------------------------+---------------------------+
 | Variable_name             | Value                     |
-+---------------------------+---------------------------+
++-------------------------- | ---------------------------+
 | thread_cache_size         | 4                         |
 | thread_concurrency        | 10                        |
 | thread_handling           | one-thread-per-connection |
