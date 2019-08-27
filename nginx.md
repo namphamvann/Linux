@@ -2,13 +2,13 @@
 ** Tạo file nginx.repo
 * Vào đường dẫn: vim /etc/yum.repos.d/nginx.repo
 * Thêm:
-    '''
+    
        [nginx]
        name=nginx repo
        baseurl=http://nginx.org/packages/mainline/centos/7/$basearch/
        gpgcheck=0
        enabled=1
-        '''
+        
 2. Install
    yum install nginx
 3. Start nginx
