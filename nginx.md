@@ -21,7 +21,7 @@
    - vim /etc/nginx/conf.d/virtualhost.conf
    - Cấu hình file virtualhost.conf: 
        
-    server {
+   ``` server {
        listen       80;
        server_name  bongdaweb.com;
        access_log  /var/log/nginx/virtualhost/access.log;
@@ -31,3 +31,4 @@
            index   index.html;
     }
  }
+```
