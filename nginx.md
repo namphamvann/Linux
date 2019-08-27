@@ -10,20 +10,24 @@
        enabled=1
         
 2. Install
-```yum install nginx
+```
+yum install nginx
    ```
 3. Start nginx
-```systemctl start nginx
+```
+systemctl start nginx
    ```
 4. Enable nginx ( để start nginx nếu reboot lại server)
-```systemctl enable nginx
+```
+systemctl enable nginx
      ```
 5. Tao virtualhost
 * Virtual host được tạo trong thư mục /etc/nginx/conf.d
 * Tạo virtualhost 
    - vim /etc/nginx/conf.d/virtualhost.conf
    - Cấu hình file virtualhost.conf:     
-   ```server {
+   ```
+   server {
        listen       80;
        server_name  bongdaweb.com;
        access_log  /var/log/nginx/virtualhost/access.log;
