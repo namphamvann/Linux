@@ -14,19 +14,17 @@ uptime
 	 
     b.kill process which is consuming high cpu
     ```
-          kill -9 PID
-	  ```
+    kill -9 PID
+    ```
     c. if php process are consuming more cpu , can use:
     ```
-          killall -9 php
-	  ```
+    killall -9 php
+    ```
     d.restart apache
     ```
     killall -9 httpd
-```
-	   ```
         /etc/init.d/httpd restart
-	```
+```
 2. Monitor bằng mytop
  b1: install mytop
  b2: dùng lệnh
