@@ -46,10 +46,12 @@ MariaDB [(none)]> set global max_connections = 1001;
 -default off
 -Khi một client disconnect thread của client sẽ được đặt vào cache nếu như nó nhỏ hơn thread_cache_size.
 -Công thức: 8 + (max_connections / 100)
--câu lệnh: MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
-            MariaDB [(none)]> set global thread_cache_size = 4;
-	    MariaDB [(none)]> show variables like 'thread_%';
-	    
+-câu lệnh:
+```
+MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
+MariaDB [(none)]> set global thread_cache_size = 4
+MariaDB [(none)]> show variables like 'thread_%';
+```	    
 
  Variable_name             | Value                     
 -------------------------- | ---------------------------
