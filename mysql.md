@@ -91,16 +91,16 @@ b. Query cache
             - MariaDB [(none)]> SET GLOBAL query_cache_type = 1;	  
 	    - MariaDB [(none)]> SHOW STATUS LIKE 'Qc%';
 
- Variable_name           | Value      
------------------------- | ---------------------------
- Qcache_free_blocks      | 2          
- Qcache_free_memory      | 62808216                       
- Qcache_hits             | 680                            
- Qcache_inserts          | 50                              
- Qcache_lowmem_prunes    | 0                              
- Qcache_not_cached       | 50       
- Qcache_queries_in_cache | 46       
- Qcache_total_blocks     | 104      
+Variable_name           | Value      
+----------------------- | ---------------------------
+Qcache_free_blocks      | 2          
+Qcache_free_memory      | 62808216                       
+Qcache_hits             | 680                            
+Qcache_inserts          | 50                              
+Qcache_lowmem_prunes    | 0                              
+Qcache_not_cached       | 50       
+Qcache_queries_in_cache | 46       
+Qcache_total_blocks     | 104      
 
 Trong đó:
      *Qcache_free_memory: bộ nhớ đệm còn trống
