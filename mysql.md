@@ -38,7 +38,7 @@ mytop --prompt -d database_name
 MariaDB [(none)]> set global max_connections = 1001;
 ```
  * Tăng MaxRequestWorkers trong file cấu hình apache:
-    - Vào đường dẫn /etc/httpd/conf/httpd.conf add thêm:
+    -Vào đường dẫn /etc/httpd/conf/httpd.conf add thêm:
         MaxRequestWorkers 1000
         ServerLimit 1000
 4. Tweak cache
@@ -69,7 +69,7 @@ MariaDB [(none)]> show variables like 'thread_%';
 b. Query cache
   -Đây là dung lượng bộ nhớ (RAM) được phân bổ cho kết quả truy vấn bộ đệm. Điều này sẽ tăng tốc kết quả từ cơ sở dữ liệu MySQL. Biến này được BẬT theo mặc định. Ba biến chính liên quan đến Cache truy vấn được liệt kê bên dưới
   -Query_cache_type: ON 0r OFF
-  -Query_cache_size: dung lượng bộ nhớ Ram dành cho cache, thường để 6M/1G RA
+  -Query_cache_size: dung lượng bộ nhớ Ram dành cho cache, thường để 6M/1G RAM
   -câu lệnh:
  ```
  MariaDB [(none)]> set global query_cache_size = 62914560;
