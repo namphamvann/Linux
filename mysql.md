@@ -32,24 +32,24 @@ killall -9 php
 mytop --prompt -d database_name
 ```	
  * option:
-  **? : Display help.
-  **c : Show “command counters” based on the Com_* values in SHOW STATUS.
-  **d : Show only threads connected to a particular database.
-  **f : Given a thread id, display the entire query that thread was running.
-  **F : Disable all filtering (host, user, and db).
-  **h : Only show queries from a particular host.
-  **H : Toggle the header display. You can also specify either header=0 or header=1 in your config file to set the default behavior.
-  **i : Toggle the display of idle (sleeping) threads. If sleeping threads are filtered, the default sorting order is reversed so that the longest running queries appear at the top of the list.
-  **k : Kill a thread.
-  **m : Toggle modes. Currently this switches from `top’ mode to `qps’ (Queries Per Second Mode). In this mode, mytop will write out one integer per second. The number written reflects the number of queries executed by the server in the previous one second interval.
+  **? : Display help**
+  **c : Show “command counters” based on the Com_* values in SHOW STATUS**
+  **d : Show only threads connected to a particular database**
+  **f : Given a thread id, display the entire query that thread was running**
+  **F : Disable all filtering (host, user, and db)**
+  **h : Only show queries from a particular host**
+  **H : Toggle the header display. You can also specify either header=0 or header=1 in your config file to set the default behavior**
+  **i : Toggle the display of idle (sleeping) threads. If sleeping threads are filtered, the default sorting order is reversed so that the longest running queries appear at the top of the list**
+  **k : Kill a thread**
+  **m : Toggle modes. Currently this switches from `top’ mode to `qps’ (Queries Per Second Mode). In this mode, mytop will write out one integer per second. The number written reflects the number of queries executed by the server in the previous one second interval**
 
- **More modes may be added in the future.
-  **o : Reverse the default sort order.
-  **p : Pause display.
-  **q : Quit mytop
-  **r : Reset the server’s status counters via a FLUSH STATUS command.
-  **s : Change the sleep time (number of seconds between display refreshes).
-  **u : Show only threads owned by a giver user
+ **More modes may be added in the future**
+  **o : Reverse the default sort order**
+  **p : Pause display**
+  **q : Quit mytop**
+  **r : Reset the server’s status counters via a FLUSH STATUS command**
+  **s : Change the sleep time (number of seconds between display refreshes)**
+  **u : Show only threads owned by a giver user**
 3. Tăng số connection
  *Mặc định trong mysql số connection tối đa là 151 nonnection
  * Tăng connection:
