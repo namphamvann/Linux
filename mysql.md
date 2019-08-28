@@ -6,7 +6,7 @@ I. Monitor (giám sát)
   1. top
      a. Load monitoring in linux server top, W and uptime for check the load on server
 commands: 
-```
+```mysql
 top
 ```
 ```
