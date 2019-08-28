@@ -13,9 +13,9 @@ uptime
 ```
 	 
     b.kill process which is consuming high cpu
-    ```
-    kill -9 PID
-    ```
+```
+kill -9 PID
+```
     c. if php process are consuming more cpu , can use:
     ```
     killall -9 php
