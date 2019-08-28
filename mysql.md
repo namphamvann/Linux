@@ -31,7 +31,7 @@ killall -9 php
 ```
 mytop --prompt -d database_name
 ```	
- * option
+ *option
 -?: Display help
 -c: Show “command counters” based on the Com_* values in SHOW STATUS
 -d: Show only threads connected to a particular database
@@ -57,7 +57,7 @@ More modes may be added in the future
       MariaDB [(none)]> set global max_connections = 1001;
       ```
  * Tăng MaxRequestWorkers trong file cấu hình apache:
-    */etc/httpd/conf/httpd.conf add thêm:
+    - Vào đường dẫn /etc/httpd/conf/httpd.conf add thêm:
         MaxRequestWorkers 1000
         ServerLimit 1000
 4. Tweak cache
