@@ -100,14 +100,19 @@ b. Query cache
  Variable_name           | Value      
 
  Qcache_free_blocks      | 2          
- Qcache_free_memory      | 62808216                       -->bộ nhớ đệm còn trống
- Qcache_hits             | 680                            -->là số lượng query đã được lấy từ cache
- Qcache_inserts          | 50                              ---> là số lượng query đã thực thi xong và được đưa vào cache
- Qcache_lowmem_prunes    | 0                              ---> là số lượng các query không thể cache do thiếu RAM.
+ Qcache_free_memory      | 62808216                       
+ Qcache_hits             | 680                            
+ Qcache_inserts          | 50                              
+ Qcache_lowmem_prunes    | 0                              
  Qcache_not_cached       | 50       
  Qcache_queries_in_cache | 46       
  Qcache_total_blocks     | 104      
 
+Trong đó:
+     *Qcache_free_memory: bộ nhớ đệm còn trống
+     *cache_hits: là số lượng query đã được lấy từ cache
+     *Qcache_lowmem_prunes: là số lượng các query không thể cache do thiếu RAM
+     *Qcache_inserts: là số lượng query đã thực thi xong và được đưa vào cache 
      * Các truy vấn INSERT / UPDATE / DELETE sẽ được thực thi vào trong database mà không bị cache.
      * Nếu khởi động lại MySQL các cấu hình trên sẽ mất tác dụng. Để áp dụng vĩnh viễn các bạn cần phải khai báo vào file config của MySQL tại đường dẫn sau:
 		     [root@server ~]# nano /etc/my.cnf
