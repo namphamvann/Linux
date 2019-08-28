@@ -92,7 +92,7 @@ b. Query cache
 	    - MariaDB [(none)]> SHOW STATUS LIKE 'Qc%';
 
  Variable_name           | Value      
--------------------------- | ---------------------------
+------------------------ | ---------------------------
  Qcache_free_blocks      | 2          
  Qcache_free_memory      | 62808216                       
  Qcache_hits             | 680                            
