@@ -2,7 +2,7 @@
 * monitoring
 * check log
 * use some diagnostic tool (tool chẩn đoán)
-**I. Monitor (giám sát)
+I. Monitor
   1.top
      a. Load monitoring in linux server top, W and uptime for check the load on server
 commands: 
