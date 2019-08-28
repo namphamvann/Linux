@@ -31,7 +31,7 @@ killall -9 php
 ```
 mytop --prompt -d database_name
 ```	
- * option:
+ * option
 -?: Display help
 -c: Show “command counters” based on the Com_* values in SHOW STATUS
 -d: Show only threads connected to a particular database
