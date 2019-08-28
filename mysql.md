@@ -74,8 +74,9 @@ uptime
 *câu lệnh: MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
             MariaDB [(none)]> set global thread_cache_size = 4;
 	    MariaDB [(none)]> show variables like 'thread_%';
-	    Variable_name | Value
+	    Firt Header | Second Header
 	    ------------- | ------------
+	    Variable_name | Value
 	    thread_cache_size | 4
 	    thread_concurrency | 10
 	    thread_handling | one-thread-per-connection
