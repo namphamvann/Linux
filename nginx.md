@@ -38,3 +38,7 @@ systemctl enable nginx
     }
  }
 ```
+6. Cài nginx từ source
+```
+rpm -Uvh http://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.16.1-1.el7.ngx.x86_64.rpm
+```
