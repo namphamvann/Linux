@@ -74,31 +74,20 @@ uptime
 *câu lệnh: MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
             MariaDB [(none)]> set global thread_cache_size = 4;
 	    MariaDB [(none)]> show variables like 'thread_%';
-	    Firt Header | Second Header
-	    ------------- | ------------
-	    Variable_name | Value
-	    thread_cache_size | 4
-	    thread_concurrency | 10
-	    thread_handling | one-thread-per-connection
-	    thread_pool_idle_timeout | 60
-	    thread_pool_max_threads | 500
-	    thread_pool_oversubscribe | 3
-	    thread_pool_size | 2
-	    thread_pool_stall_limit | 500
-	    thread_stack | 294912
-+---------------------------+---------------------------+
-| Variable_name             | Value                     |
-+-------------------------- | ---------------------------+
-| thread_cache_size         | 4                         |
-| thread_concurrency        | 10                        |
-| thread_handling           | one-thread-per-connection |
-| thread_pool_idle_timeout  | 60                        |
-| thread_pool_max_threads   | 500                       |
-| thread_pool_oversubscribe | 3                         |
-| thread_pool_size          | 2                         |
-| thread_pool_stall_limit   | 500                       |
-| thread_stack              | 294912                    |
-+---------------------------+---------------------------+
+	    
+
+ Variable_name             | Value                     
+-------------------------- | ---------------------------
+ thread_cache_size         | 4                         
+ thread_concurrency        | 10                        
+ thread_handling           | one-thread-per-connection 
+ thread_pool_idle_timeout  | 60                        
+ thread_pool_max_threads   | 500                       
+ thread_pool_oversubscribe | 3                         
+ thread_pool_size          | 2                         
+ thread_pool_stall_limit   | 500                       
+ thread_stack              | 294912                    
+
 
 b. Query cache
   * Đây là dung lượng bộ nhớ (RAM) được phân bổ cho kết quả truy vấn bộ đệm. Điều này sẽ tăng tốc kết quả từ cơ sở dữ liệu MySQL. Biến này được BẬT theo mặc định. Ba biến chính liên quan đến Cache truy vấn được liệt kê bên dưới
