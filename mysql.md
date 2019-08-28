@@ -48,7 +48,7 @@ MariaDB [(none)]> set global max_connections = 1001;
 -Công thức: 8 + (max_connections / 100)
 -câu lệnh:
 ```
-MariaDB [(none)]> show variables like 'thread_cache_size'; --> mặc định bằng 0
+MariaDB [(none)]> show variables like 'thread_cache_size';  
 MariaDB [(none)]> set global thread_cache_size = 4
 MariaDB [(none)]> show variables like 'thread_%';
 ```	    
@@ -67,13 +67,15 @@ MariaDB [(none)]> show variables like 'thread_%';
 
 
 b. Query cache
-  - Đây là dung lượng bộ nhớ (RAM) được phân bổ cho kết quả truy vấn bộ đệm. Điều này sẽ tăng tốc kết quả từ cơ sở dữ liệu MySQL. Biến này được BẬT theo mặc định. Ba biến chính liên quan đến Cache truy vấn được liệt kê bên dưới
-  - Query_cache_type: ON 0r OFF
-  - Query_cache_size: dung lượng bộ nhớ Ram dành cho cache, thường để 6M/1G RAM
-	    - câu lệnh: MariaDB [(none)]> set global query_cache_size = 62914560;
-            - MariaDB [(none)]> SET GLOBAL query_cache_type = 1;	  
-	    - MariaDB [(none)]> SHOW STATUS LIKE 'Qc%';
-
+  -Đây là dung lượng bộ nhớ (RAM) được phân bổ cho kết quả truy vấn bộ đệm. Điều này sẽ tăng tốc kết quả từ cơ sở dữ liệu MySQL. Biến này được BẬT theo mặc định. Ba biến chính liên quan đến Cache truy vấn được liệt kê bên dưới
+  -Query_cache_type: ON 0r OFF
+  -Query_cache_size: dung lượng bộ nhớ Ram dành cho cache, thường để 6M/1G RA
+  -câu lệnh:
+ ```
+ MariaDB [(none)]> set global query_cache_size = 62914560;
+ MariaDB [(none)]> SET GLOBAL query_cache_type = 1;	 
+ MariaDB [(none)]> SHOW STATUS LIKE 'Qc%';
+```
 Variable_name           | Value      
 ----------------------- | ---------------------------
 Qcache_free_blocks      | 2          
@@ -108,6 +110,7 @@ II. check mysql log files
 3. Slow query log
 * Mặc định ko bật. Đây là file log quan trọng để lưu lại log làm database chậm
 * Enable slow query logging by adding the following entry in MySQL configuration
-     slow_query_log=/var/log/mariadb/slow.log
-     
+```
+slow_query_log=/var/log/mariadb/slow.log
+```     
 
