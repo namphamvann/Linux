@@ -43,10 +43,10 @@ MariaDB [(none)]> set global max_connections = 1001;
         ServerLimit 1000
 4. Tweak cache
  a. Thread cache size
-   -default off
-   -Khi một client disconnect thread của client sẽ được đặt vào cache nếu như nó nhỏ hơn thread_cache_size.
-   -Công thức = 8 + (max_connections / 100)
-   -câu lệnh
+   - default off
+   - Khi một client disconnect thread của client sẽ được đặt vào cache nếu như nó nhỏ hơn thread_cache_size.
+   - Công thức = 8 + (max_connections / 100)
+   - câu lệnh:
 ```
 MariaDB [(none)]> show variables like 'thread_cache_size';  
 MariaDB [(none)]> set global thread_cache_size = 4
